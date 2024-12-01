@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Finder</title>
+</head>
+<body>
+    <h1>Route Finder</h1>
+    <form action="{{ url_for('route') }}" method="POST">
+        <label for="start_location">Start Location:</label>
+        <input type="text" id="start_location" name="start_location" required><br><br>
+
+        <label for="end_location">End Location:</label>
+        <input type="text" id="end_location" name="end_location" required><br><br>
+
+        <label for="vehicle">Select Vehicle:</label>
+        <select id="vehicle" name="vehicle" required>
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+            <option value="foot">Foot</option>
+            <option value="scooter">Scooter</option>
+            <option value="truck">Truck</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="bus">Bus</option>
+            <option value="van">Van</option>
+            <option value="other">Other</option> <!-- Added 'Other' option -->
+        </select><br><br>
+
+        <label for="other_vehicle">If other, please specify:</label>
+        <input type="text" id="other_vehicle" name="other_vehicle"><br><br> <!-- Input field for custom vehicle -->
+
+        <label for="unit">Select Distance Unit:</label>
+        <select id="unit" name="unit" required>
+            <option value="km">Kilometers</option>
+            <option value="miles">Miles</option>
+            <option value="yards">Yards</option>
+            <option value="meters">Meters</option>
+            <option value="other">Other</option> <!-- Added 'Other' option -->
+        </select><br><br>
+
+        <label for="other_unit">If other, please specify:</label>
+        <input type="text" id="other_unit" name="other_unit"><br><br> <!-- Input field for custom unit -->
+
+        <label for="date">Travel Date (Optional):</label>
+        <input type="text" id="date" name="date" placeholder="YYYY-MM-DD HH:MM:SS"><br><br>
+
+        <button type="submit">Get Route</button>
+    </form>
+</body>
+</html>
